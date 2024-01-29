@@ -60,5 +60,3 @@
 - 電子郵件：satanyu666@gmail.com
 - GitHub Issue：[提交問題](https://github.com/luciferyu666/3D-point-cloud-alignment-tool/issues)
 ```
-
-這份 `README.md` 檔案提供了專案的基本介紹、安裝指南、使用方法、開發和測試資訊、貢獻指南、版權許可以及聯絡方式。您可以根據實際情況進行調整和擴充。
