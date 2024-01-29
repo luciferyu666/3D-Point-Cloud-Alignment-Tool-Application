@@ -52,7 +52,7 @@
 
 ## 版權和許可
 
-本專案採用 [MIT許可](LICENSE)。詳細資訊請參閱 `LICENSE` 文件。
+本專案採用 [Apache License 2.0](LICENSE)。詳細資訊請參閱 `LICENSE` 文件。
 
 ## 聯絡方式
 
