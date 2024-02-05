@@ -20,7 +20,7 @@
 pip install open3d matplotlib
 
 然後，從GitHub克隆專案到本地：
-git clone https://github.com/yourusername/yourprojectname.git
+git clone https://github.com/luciferyu666/3D-Point-Cloud-Alignment-Tool-Application.git
 
 ## 使用方法
 
