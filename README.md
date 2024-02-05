@@ -53,4 +53,4 @@ vis.visualize_alignment_error(source_points, target_points)
 
 如有任何疑問或建議，請通過以下方式與我們聯絡：
 - 電子郵件：satanyu666@gmail.com
-- GitHub Issue：[提交問題](https://github.com/luciferyu666/3D-point-cloud-alignment-tool/issues)
+- GitHub Issue：https://github.com/luciferyu666/3D-point-cloud-alignment-tool/issues
