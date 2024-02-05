@@ -4,3 +4,4 @@ numpy==1.19.5
 Pillow==8.1.0
 tkinter  # tkinter通常隨Python一起安裝，可能不需要單獨列出
 
+##
