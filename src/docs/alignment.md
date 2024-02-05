@@ -74,3 +74,4 @@ visualize_alignment(source, target, aligned_source)
 
 ## 版權和許可
 本模組採用Apache License Version 2.0許可協議。詳細的許可協議內容請參考項目根目錄下的`LICENSE`文件。
+#
