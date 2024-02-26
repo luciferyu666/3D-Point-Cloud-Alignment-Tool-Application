@@ -1,28 +1,42 @@
-from modules.data_loader import DataLoader
-from modules.camera_pose_estimation import CameraPoseEstimation
-from modules.initial_alignment import InitialAlignment
-from modules.icp_alignment import ICPAlignment
-from modules.automation import Automation
-from modules.logging_report import LoggingReport
+import sys
+from PyQt5.QtWidgets import QApplication
+from main_window import MainWindow
+from PyQt5.QtCore import QCoreApplication
+import logging
+import json
+
+def load_app_config():
+    """加載應用配置文件"""
+    with open('app_config.json', 'r') as config_file:
+        return json.load(config_file)
+
+def setup_logging():
+    """設定日誌配置"""
+    with open('logging_config.json', 'r') as config_file:
+        logging.config.dictConfig(json.load(config_file))
+    logging.info('應用程式啟動')
 
 def main():
-    # 初始化模組
-    data_loader = DataLoader()
-    camera_pose_estimation = CameraPoseEstimation()
-    initial_alignment = InitialAlignment()
-    icp_alignment = ICPAlignment()
-    automation = Automation()
-    logging_report = LoggingReport()
+    """應用程式入口函數"""
+    QCoreApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    app = QApplication(sys.argv)
 
-    # 數據加載和處理流程
-    images, point_clouds = data_loader.load_data()
-    camera_poses = camera_pose_estimation.estimate_poses(images)
-    aligned_point_clouds = initial_alignment.align(point_clouds, camera_poses)
-    final_aligned_point_clouds = icp_alignment.refine_alignment(aligned_point_clouds)
-    automation.process(final_aligned_point_clouds)
-    logging_report.generate_report()
+    # 加載應用配置
+    app_config = load_app_config()
+    setup_logging()
 
-if __name__ == "__main__":
+    # 初始化主窗口
+    main_window = MainWindow()
+    main_window.show()
+
+    # 設定應用程式退出時的清理動作
+    app.aboutToQuit.connect(app_cleanup)
+
+    sys.exit(app.exec_())
+
+def app_cleanup():
+    """應用程式清理函數"""
+    logging.info('應用程式結束')
+
+if __name__ == '__main__':
     main()
-
-##

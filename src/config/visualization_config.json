@@ -1,0 +1,63 @@
+{
+    "visualizationParameters": {
+      "pointSize": 1.0,
+      "colorMapping": {
+        "type": "height",
+        "minValue": 0,
+        "maxValue": 100,
+        "colorScale": "jet"
+      },
+      "opacity": 0.8
+    },
+    "cameraSettings": {
+      "defaultPosition": [0, 0, 100],
+      "defaultView": "top-down",
+      "presetViews": [
+        {
+          "name": "Top Down",
+          "position": [0, 0, 100],
+          "lookAt": [0, 0, 0],
+          "up": [0, 1, 0]
+        },
+        {
+          "name": "Side View",
+          "position": [100, 0, 0],
+          "lookAt": [0, 0, 0],
+          "up": [0, 0, 1]
+        }
+      ]
+    },
+    "performanceOptimization": {
+      "levelOfDetailAdjustment": true,
+      "pointCloudSimplification": "octree",
+      "downsamplingRate": 0.5
+    },
+    "interactionSettings": {
+      "tools": ["select", "zoom", "rotate", "pan"],
+      "enableMultiSelection": true
+    },
+    "highlightAndAnnotation": {
+      "highlightOptions": {
+        "featureBased": ["edges", "corners"],
+        "color": "#ff0000",
+        "borderWidth": 2
+      },
+      "annotationTools": ["textLabel", "distanceMeasure"]
+    },
+    "outputAndSharingOptions": {
+      "imageCapture": {
+        "format": "png",
+        "quality": 90
+      },
+      "videoRecording": {
+        "format": "mp4",
+        "resolution": "1080p",
+        "frameRate": 30
+      },
+      "modelExport": {
+        "format": ["obj", "stl"],
+        "quality": "high"
+      }
+    }
+  }
+  
