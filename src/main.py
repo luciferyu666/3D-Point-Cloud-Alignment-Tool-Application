@@ -1,42 +1,20 @@
-import sys
-from PyQt5.QtWidgets import QApplication
-from main_window import MainWindow
-from PyQt5.QtCore import QCoreApplication
-import logging
-import json
-
-def load_app_config():
-    """加載應用配置文件"""
-    with open('app_config.json', 'r') as config_file:
-        return json.load(config_file)
-
-def setup_logging():
-    """設定日誌配置"""
-    with open('logging_config.json', 'r') as config_file:
-        logging.config.dictConfig(json.load(config_file))
-    logging.info('應用程式啟動')
+import tkinter as tk
+from user_interface.ui_module import MainApplication
 
 def main():
-    """應用程式入口函數"""
-    QCoreApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    app = QApplication(sys.argv)
+    """
+    主應用程式入口。
+    初始化並運行用戶介面。
+    """
+    root = tk.Tk()
+    root.geometry("800x600")  # 設定窗口大小
+    root.title("3D點雲對齊工具應用程式")  # 設定窗口標題
 
-    # 加載應用配置
-    app_config = load_app_config()
-    setup_logging()
+    # 初始化應用程式並將其與根窗口關聯
+    app = MainApplication(master=root)
 
-    # 初始化主窗口
-    main_window = MainWindow()
-    main_window.show()
+    # 進入事件循環
+    app.mainloop()
 
-    # 設定應用程式退出時的清理動作
-    app.aboutToQuit.connect(app_cleanup)
-
-    sys.exit(app.exec_())
-
-def app_cleanup():
-    """應用程式清理函數"""
-    logging.info('應用程式結束')
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
